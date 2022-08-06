@@ -6,4 +6,4 @@ FoamFile
     object      transportProperties;
 }
 
-nu  nu [0 2 -1 0 0 0 0] 1e-04;
+nu  nu [0 2 -1 0 0 0 0] #eval "1.0 / 300.0";
