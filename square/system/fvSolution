@@ -10,10 +10,10 @@ solvers
 {
     p
     {
-        solver PCG;
-        preconditioner DIC;
-        tolerance 1e-06;
-        relTol 0.01;
+        solver    GAMG;
+        smoother  DICGaussSeidel;
+        tolerance 1e-6;
+        relTol    0.01;
     }
 
     pFinal
@@ -25,7 +25,7 @@ solvers
     U
     {
         solver smoothSolver;
-        smoother symGaussSeidel;
+        smoother GaussSeidel;
         tolerance 1e-05;
         relTol 0;
     }
@@ -33,7 +33,7 @@ solvers
 
 PISO
 {
-    nCorrectors     5;
+    nCorrectors     3;
     nNonOrthogonalCorrectors 0;
     pRefCell        0;
     pRefValue       0;
